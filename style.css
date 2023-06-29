@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: #121212;
+    background: linear-gradient(to bottom right, #011d71 0%, #121212 100%);
 }
 
 .image {
@@ -75,7 +75,7 @@ i {
     text-align: left;
     
     font-size: 28pt;
-    color: #5492e3;
+    color: #4abdff;
     width: 20vw;
 }
 
@@ -84,7 +84,39 @@ i {
     flex-direction: column;
     gap: 5vh;
   }
+
+  h1::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
   
+  h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  h1::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(0, 0%, 0%);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+  h1 {
+    position: relative;
+    font-size: 5rem;
+  }
+  
+  .trail { /* className for the trail elements */
+    position: absolute;
+    height: 10px; width: 10px;
+    border-radius: 6px;
+    background: #4abdff;
+  }
 
 
 
